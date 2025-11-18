@@ -1,116 +1,124 @@
-# A4_G3_AIML
-Email and SMS Spam vs Ham Detection using NLP tectniques and ML Algorithms
-Multi-Class Email & SMS Spam Detection System
+# Email & SMS Multi-Class Spam Detection using NLP and Machine Learning
 
-A machine-learning based system that classifies messages into Email Ham, Email Spam, SMS Ham, SMS Spam using NLP and security-based features.
+A unified machine learning system designed to classify both email and SMS messages into four categories:
 
-1. Project Title & Objectives
-Project Title:
+* Email Ham
+* Email Spam
+* SMS Ham
+* SMS Spam
 
-Email & SMS Multi-Class Spam Detection Using NLP and Machine Learning
+The system uses NLP techniques, TF-IDF vectorization, and security-based metadata features to enhance spam detection accuracy and enable real-time classification with model confidence scores.
 
-Objectives:
+---
 
-Build a unified spam detection system for both email and SMS messages.
+## 1. Project Objectives
 
-Use NLP preprocessing, TF-IDF, and security-based metadata to improve accuracy.
+* Develop a single, multi-class system for detecting spam in emails and SMS.
+* Apply NLP preprocessing, TF-IDF, and security-oriented metadata extraction.
+* Train multiple machine learning models and compare their performance.
+* Support real-time message classification with probability scores.
 
-Train multiple ML models and compare their performance.
+---
 
-Allow real-time message classification with confidence scores.
+## 2. Dataset Details
 
-2. Dataset Details
+The dataset consists of the following columns:
 
-The dataset must contain the following columns:
+| Column | Description                    |
+| ------ | ------------------------------ |
+| text   | Message content (Email or SMS) |
+| label  | Spam or Ham                    |
+| type   | Message type: Email or SMS     |
 
-Column	Description
-text	Message content (email or SMS)
-label	spam or ham
-type	email or sms
+### Data Cleaning Performed
 
-Data cleaning steps:
+* Removed missing or invalid entries
+* Standardized labels
+* Created unified 4-class output:
 
-Removed missing values
+  * `email_ham`
+  * `email_spam`
+  * `sms_ham`
+  * `sms_spam`
 
-Standardized labels
+---
 
-Combined labels into 4 classes:
+## 3. NLP Processing Pipeline
 
-email_ham, email_spam, sms_ham, sms_spam
+* Text cleaning
+* Tokenization
+* Stopword removal
+* Lemmatization
+* TF-IDF vectorization
+* Security Feature Extraction:
 
-3. Algorithms & Models Used
-NLP Processing
+  * URL count
+  * Suspicious domains
+  * Phishing-related keywords
+  * Presence of all-caps words
+  * Exclamation marks and special characters
 
-Text cleaning
+---
 
-Stopword removal
+## 4. Machine Learning Models
 
-Lemmatization
+The following models were trained and evaluated:
 
-TF-IDF vectorization
+* Multinomial Naive Bayes
+* Logistic Regression
+* Random Forest Classifier
+* K-Nearest Neighbors (KNN)
 
-Security feature extraction (URLs, suspicious domains, phishing keywords, all-caps, exclamations)
+Each model was tested on the multi-class dataset using standard evaluation metrics.
 
-Machine Learning Models
+---
 
-Multinomial Naive Bayes
+## 5. Results and Evaluation
 
-Logistic Regression
+Evaluation metrics used:
 
-Random Forest Classifier
+* Accuracy
+* Precision
+* Recall
+* F1-score
 
-K-Nearest Neighbors (KNN)
+### Key Insights
 
-Each model is trained and evaluated on the multi-class dataset.
+* Logistic Regression and Random Forest showed strong multi-class performance.
+* Naive Bayes performed consistently well for text-dominated datasets.
+* KNN performance varied depending on dataset size and feature dimensionality.
 
-4. Results
+### Visualizations Included
 
-Models evaluated on accuracy, precision, recall, and F1-score.
+* Classification reports
+* Confusion matrices
+* Model comparison charts
+* Probability/Confidence score plots
 
-Typical findings:
+---
 
-Logistic Regression and Random Forest perform well for multi-class classification.
+## 6. Conclusion
 
-Naive Bayes performs consistently good on text data.
+A unified multi-class spam detection system effectively classifies both emails and SMS messages using a hybrid of NLP and security-based features.
+The system demonstrates strong performance across multiple models and is suitable for real-time spam detection use cases.
 
-KNN performs moderately depending on dataset size.
+---
 
-Performance visualization includes:
+## 7. Future Enhancements
 
-Classification reports
+* Integration of deep learning models (LSTM, BERT)
+* Multilingual detection capabilities
+* Deployment as an API or mobile/desktop application
+* Continuous model learning using streaming data
+* Expansion with real-world spam datasets
 
-Confusion matrices
+---
 
-Confidence probability charts
+## 8. References
 
-5. Conclusion
+* [Scikit-learn Documentation](https://scikit-learn.org/1.4/tutorial/text_analytics/working_with_text_data.html scikit-learn)
+* NLTK NLP Toolkit
+*  [Project Dataset](Email_SMS_Data.csv)
+* https://etasr.com/index.php/ETASR/article/view/7631
+* Python and Streamlit official documentation
 
-A unified multi-class system can successfully classify both email and SMS messages into spam or ham.
-
-Combining NLP with security-based features significantly improves detection accuracy.
-
-The system can be used for real-time spam detection across multiple communication channels.
-
-6. Future Scope
-
-Integrate deep learning models (LSTM, BERT).
-
-Add language detection and multilingual support.
-
-Deploy as an API or mobile app.
-
-Implement continuous learning with streaming data.
-
-Expand dataset with real-world spam samples.
-
-7. References
-
-Scikit-learn documentation
-
-NLTK NLP library documentation
-
-Research papers on phishing and spam detection
-
-Public spam datasets (SpamAssassin, SMS Spam Collection)
-
-Python & Streamlit official documentation
